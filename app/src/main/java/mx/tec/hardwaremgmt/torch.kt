@@ -19,10 +19,10 @@ class torch : AppCompatActivity() {
         setContentView(R.layout.activity_torch)
 
         var cameraManager = getSystemService(CAMERA_SERVICE) as CameraManager
-        var cameraId = cameraManager.cameraIdList[0] as String
+        var cameraId = cameraManager.cameraIdList[1] as String
 
-        var buttonOn = findViewById<Button>(R.id.button_on) as Button
-        var buttonOff = findViewById<Button>(R.id.button_off) as Button
+        var buttonOn = findViewById(R.id.button_on) as Button
+        var buttonOff = findViewById(R.id.button_off) as Button
 
 
         buttonOn.setOnClickListener {

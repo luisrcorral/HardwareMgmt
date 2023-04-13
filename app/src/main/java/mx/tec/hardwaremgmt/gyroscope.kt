@@ -15,10 +15,10 @@ class gyroscope : AppCompatActivity(), SensorEventListener {
 
       val sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
 
-      sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)?.also { accelerometer ->
+      sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE)?.also { gyroscope ->
             sensorManager.registerListener(
                 this,
-                accelerometer,
+                gyroscope,
                 SensorManager.SENSOR_DELAY_FASTEST,
                 SensorManager.SENSOR_DELAY_FASTEST
             )

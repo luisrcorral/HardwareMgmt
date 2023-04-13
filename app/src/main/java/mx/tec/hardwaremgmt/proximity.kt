@@ -17,10 +17,10 @@ class proximity : AppCompatActivity(), SensorEventListener {
 
         val sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         
-        sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)?.also { accelerometer ->
+        sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY)?.also { proximity ->
             sensorManager.registerListener(
                 this,
-                accelerometer,
+                proximity,
                 SensorManager.SENSOR_DELAY_FASTEST,
                 SensorManager.SENSOR_DELAY_FASTEST
             )
@@ -31,10 +31,10 @@ class proximity : AppCompatActivity(), SensorEventListener {
     override fun onSensorChanged(event: SensorEvent?) {
         if (event?.sensor?.type == Sensor.TYPE_PROXIMITY) {
             // Detected something nearby
-            // Nothing is nearby
             if(event.values[0] == 0f) {
                 getWindow().getDecorView().setBackgroundColor(Color.RED)
             } else {
+                // Nothing is nearby
                 getWindow().getDecorView().setBackgroundColor(Color.GREEN)
             }
 
